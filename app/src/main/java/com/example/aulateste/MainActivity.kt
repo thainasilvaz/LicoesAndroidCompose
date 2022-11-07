@@ -1,0 +1,35 @@
+package com.example.aulateste
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
+import androidx.compose.material.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.aulateste.ui.theme.AulaTesteTheme
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            MessageCard("Android")
+            //Text("Hello World!") //função de composição text exibindo uma mensagem
+        }
+    }
+}
+
+@Composable
+fun MessageCard(name: String){
+    Text(text = "Hello $name!")
+}
+
+@Preview //permite visualizar as funções de composição sem precisar criar e instalar o app em um emulador ou dispositivo Android
+@Composable //função composta
+fun PreviewMessageCard() {
+    MessageCard( "Android")
+}
+
